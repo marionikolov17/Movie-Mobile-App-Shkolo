@@ -1,11 +1,18 @@
-import { Pressable, SafeAreaView, Text } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { SafeAreaView, Text } from "react-native";
 import AppHeader from "../../features/layout/components/AppHeader/AppHeader";
-
-
-
+import {
+  LoginButton,
+  AccessToken,
+} from 'react-native-fbsdk-next';
+import {Settings} from 'react-native-fbsdk-next';
+import { useEffect } from "react";
+import auth from "@react-native-firebase/auth"
 
 export default function Login() {
+  useEffect(() => {
+    Settings.setAdvertiserTrackingEnabled(true);
+    Settings.initializeSDK();
+  }, []);
 
   return (
     <>
@@ -13,19 +20,30 @@ export default function Login() {
         <AppHeader />
         <Text
           style={{ fontFamily: "MontserratBold" }}
-          className="mt-4 text-2xl"
+          className="my-4 text-2xl"
         >
           Log In
         </Text>
-        <Pressable className="flex flex-row items-center mt-8 bg-[#1877F2] py-2 px-4 rounded-lg shadow">
-          <Icon name="facebook" size={30} color={"white"} />
-          <Text
-            style={{ fontFamily: "Montserrat" }}
-            className="text-white ml-4 text-lg"
-          >
-            Login with Facebook
-          </Text>
-        </Pressable>
+        <LoginButton 
+          onLoginFinished={async (error, result) => {
+            if (error) {
+              console.log("err", error)
+            } else if (result.isCancelled) {
+              console.log("cancelled")
+            } else {
+              try {
+                const data = await AccessToken.getCurrentAccessToken();
+
+                const fbCredentials = auth.FacebookAuthProvider.credential(data.accessToken);
+
+                const user = await auth().signInWithCredential(fbCredentials);
+                console.log(user.additionalUserInfo)
+              } catch (error) {
+                console.log("login err", error);
+              }
+            }
+          }}
+        />
       </SafeAreaView>
     </>
   );
