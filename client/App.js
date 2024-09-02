@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from "react";
 import Navigation from "./src/features/layout/components/Navigation/Navigation";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MovieDetails from "./src/pages/MovieDetails/MovieDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ export default function App() {
         }
       >
         <Stack.Screen name="Home" component={Navigation}/>
+        <Stack.Screen name="MovieDetails" component={MovieDetails}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

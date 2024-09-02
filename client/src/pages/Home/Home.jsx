@@ -9,7 +9,7 @@ export default function Home() {
                     <Text style={{ fontFamily: "MontserratBold" }} className="py-1 px-3 text-lg bg-primaryBlue text-white">M</Text>
                     <Text style={{ fontFamily: "MontserratBold" }} className="ml-2 text-2xl">Movie App</Text>
                 </View>
-                <ScrollView>
+                <ScrollView className="mb-20">
                     <MovieList />
                 </ScrollView>
             </SafeAreaView>

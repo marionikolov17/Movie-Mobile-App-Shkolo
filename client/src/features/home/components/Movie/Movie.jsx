@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, Pressable, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function Movie() {
+  const navigation = useNavigation();
+
   return (
     <>
       <View className="w-full min-h-80 bg-white shadow rounded-lg mb-4 overflow-hidden">
@@ -28,7 +31,12 @@ export default function Movie() {
             <Text className="py-1.5 px-4 bg-primaryBlue text-white rounded-lg mr-3" style={{ fontFamily: "Montserrat" }}>#Marvel</Text>
         </View>
         <View className="px-4">
-            <Pressable className="w-full flex flex-row items-center justify-center mt-4 mb-4 bg-gray-100 py-3 rounded-lg">
+            <Pressable 
+              className="w-full flex flex-row items-center justify-center mt-4 mb-4 bg-gray-100 py-3 rounded-lg"
+              onPress={() => {
+                navigation.navigate("MovieDetails", { id: 1 })
+              }}
+            >
                 <Text style={{ fontFamily: "Montserrat" }}>See more</Text>
             </Pressable>
         </View>
