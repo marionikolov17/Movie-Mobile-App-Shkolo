@@ -26,7 +26,7 @@ export default function MovieDetails() {
                         <Image source={require("./../../../assets/movie1.jpg")} className="w-full h-full"/>
                     </View>
                     {/* Movie Title */}
-                    <Text style={{ fontFamily: "MontserratBold" }} className="mt-4 text-2xl">Deadpool 3 <Text className="text-sm text-slate-400">(2024)</Text></Text>
+                    <Text style={{ fontFamily: "MontserratBold" }} className="pt-1 mt-4 text-2xl">Deadpool 3 <Text className="text-sm text-slate-400">(2024)</Text></Text>
                     <View className="flex flex-row items-center mt-4">
                         <Icon name="star" size={20} color="#FFA412" style={{ marginRight: 5 }}/>
                         <Icon name="star" size={20} color="#FFA412" style={{ marginRight: 5 }}/>
