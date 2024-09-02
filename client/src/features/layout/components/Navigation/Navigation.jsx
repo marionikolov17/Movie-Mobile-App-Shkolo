@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Text, View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Home from "../../../../pages/Home/Home";
+import Profile from "../../../../pages/Profile/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,7 @@ export default function Navigation() {
                 </View>
             ))
         }} />
-        <Tab.Screen name="Profile" component={Home} options={{
+        <Tab.Screen name="Profile" component={Profile} options={{
             tabBarIcon: (props => (
                 <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
                     <Icon name="user" size={20} style={{ marginTop: 5, color: props.focused ? "#5D5FEF" : "#748c94" }}/>
