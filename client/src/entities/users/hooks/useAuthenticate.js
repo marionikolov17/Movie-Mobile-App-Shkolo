@@ -1,14 +1,30 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { AccessToken } from "react-native-fbsdk-next";
+import auth from "@react-native-firebase/auth";
+import { useDispatch } from "react-redux";
+import { authenticate } from "../reducers/userSlice";
 
 export default function useAuthenticate(navigation) {
-    const user = useSelector((state) => state.user)
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        console.log("Authenticated", user.isAuthenticated)
-        if (!user.isAuthenticated) {
-            return navigation.navigate("Login")
-        }
-        return navigation.navigate("Home")
-    }, [])
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await AccessToken.getCurrentAccessToken();
+
+        const fbCredentials = auth.FacebookAuthProvider.credential(
+          data.accessToken
+        );
+
+        const user = await auth().signInWithCredential(fbCredentials);
+        const obj = {
+          profile: user.additionalUserInfo.profile,
+        };
+        dispatch(authenticate(obj));
+        return navigation.navigate("Home");
+      } catch (error) {
+        return navigation.navigate("Login")
+      }
+    })();
+  }, []);
 }
