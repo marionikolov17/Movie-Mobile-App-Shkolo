@@ -23,7 +23,7 @@ export default function Navigation() {
           }
         }}
       >
-        <Tab.Screen name="Home" component={Home} options={{
+        <Tab.Screen name="MovieList" component={Home} options={{
             tabBarIcon: (props => (
                 <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
                     <Icon name="home" size={20} style={{ marginTop: 5, color: props.focused ? "#5D5FEF" : "#748c94" }}/>

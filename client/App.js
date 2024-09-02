@@ -1,9 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from 'expo-splash-screen';
-import Home from "./src/pages/Home/Home";
 import { useEffect } from "react";
 import Navigation from "./src/features/layout/components/Navigation/Navigation";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,7 +27,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Navigation />
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Navigation}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
