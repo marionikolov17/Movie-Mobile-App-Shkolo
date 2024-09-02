@@ -7,7 +7,15 @@ export default function Movie() {
 
   return (
     <>
-      <View className="w-full min-h-80 bg-white shadow rounded-lg mb-4 overflow-hidden">
+      <View 
+        className="w-full min-h-80 bg-white shadow rounded-lg mb-4 overflow-hidden relative" 
+      >
+        <Pressable 
+          className="absolute z-50 w-full h-full" 
+          onPress={() => {
+            navigation.navigate("MovieDetails", { id: 1 })
+          }}
+        ></Pressable>
         {/* Image Section */}
         <View className="w-full h-40 flex overflow-hidden justify-center items-center">
             <Image source={require("./../../../../../assets/movie1.jpg")} className="object-cover w-full h-full"/>
