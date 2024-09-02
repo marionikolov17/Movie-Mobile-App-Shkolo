@@ -12,22 +12,34 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.movieapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.movieapp.android"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["expo-font",
-      {
-        "fonts": ["assets/fonts/Montserrat.ttf", "assets/fonts/Montserrat-Bold.ttf"]
-      }]
-    ]
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "assets/fonts/Montserrat.ttf",
+            "assets/fonts/Montserrat-Bold.ttf"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "100b7f3e-fc1e-4a3b-9204-155cc122f7c8"
+      }
+    }
   }
 }
