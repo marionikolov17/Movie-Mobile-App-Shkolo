@@ -32,7 +32,7 @@ export default function Navigation() {
                 style={{
                   alignItems: "center",
                   justifyContent: "center",
-                  top: 10,
+                  top: 0,
                 }}
               >
                 <Icon
@@ -65,7 +65,7 @@ export default function Navigation() {
                 style={{
                   alignItems: "center",
                   justifyContent: "center",
-                  top: 10,
+                  top: 0,
                 }}
               >
                 <Icon
