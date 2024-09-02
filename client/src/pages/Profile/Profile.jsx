@@ -29,9 +29,6 @@ export default function Profile() {
                         <Text style={{ fontFamily: "Montserrat" }}>{user.profile?.email}</Text>
                     </View>
                 </View>
-                {/* <Pressable className="w-40 flex flex-row items-center justify-center mt-8 bg-white py-3 rounded-lg">
-                    <Text style={{ fontFamily: "Montserrat" }} className="text-strongRed">Logout</Text>
-                </Pressable> */}
                 <LoginButton 
                     onLogoutFinished={() => {
                         dispatch(logout());
