@@ -24,10 +24,10 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font",
+      ["expo-font",
       {
-        "fonts": ["assets/fonts/Montserrat.ttf"]
-      }
+        "fonts": ["assets/fonts/Montserrat.ttf", "assets/fonts/Montserrat-Bold.ttf"]
+      }]
     ]
   }
 }

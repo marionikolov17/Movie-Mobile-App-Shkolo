@@ -4,7 +4,9 @@ import Movie from "../Movie/Movie";
 export default function MovieList() {
     return (
         <>
-            <View className="w-full max-h-max flex flex-col items-center px-8 mt-4">
+            <View className="w-full max-h-max flex flex-col items-center px-8 mt-4 mb-10">
+                <Movie />
+                <Movie />
                 <Movie />
             </View>
         </>

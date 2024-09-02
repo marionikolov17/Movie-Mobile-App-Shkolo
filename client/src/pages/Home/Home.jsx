@@ -1,12 +1,13 @@
-import { SafeAreaView } from "react-native";
-import { useFonts } from 'expo-font';
+import { SafeAreaView, ScrollView } from "react-native";
 import MovieList from "../../features/home/components/MovieList/MovieList";
 
 export default function Home() {
     return (
         <>
             <SafeAreaView className="w-full min-h-full bg-mainBackground">
-                <MovieList />
+                <ScrollView>
+                    <MovieList />
+                </ScrollView>
             </SafeAreaView>
         </>
     )
