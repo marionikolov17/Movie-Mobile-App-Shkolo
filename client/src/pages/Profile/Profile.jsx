@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Profile() {
     return (
         <>
-            <SafeAreaView className="w-full flex flex-col items-center p-4">
+            <SafeAreaView className="w-full bg-mainBackground h-full flex flex-col items-center p-4">
                 <AppHeader />
                 {/* Image Section */}
                 <View className="w-40 h-40 overflow-hidden flex rounded-full mt-10">

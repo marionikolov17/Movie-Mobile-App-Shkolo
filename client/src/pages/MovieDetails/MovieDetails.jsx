@@ -9,7 +9,7 @@ export default function MovieDetails() {
 
     return (
         <>
-            <SafeAreaView>
+            <SafeAreaView className="bg-mainBackground h-full">
                 <AppHeader />
                 <ScrollView className="w-full px-6">
                     <View className="w-full mt-4 mb-8">
