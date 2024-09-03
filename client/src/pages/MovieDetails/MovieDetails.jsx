@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome";
 import AppHeader from "../../features/layout/components/AppHeader/AppHeader";
@@ -15,6 +15,8 @@ export default function MovieDetails({ route }) {
     <>
       <SafeAreaView className="bg-mainBackground h-full">
         <AppHeader />
+        {isLoading && <ActivityIndicator size="small" style={{ marginTop: 10 }}/>}
+        {error && <Text className="text-center text-strongRed text-lg" style={{ fontFamily: "Montserrat" }}>{error}</Text>}
         <ScrollView className="w-full px-6">
           <View className="w-full mt-4 mb-8">
             <Icon
