@@ -29,10 +29,10 @@ export default function MovieDetails({ route }) {
           </View>
           {/* Movie Image */}
           <View className="w-full h-44 flex items-center justify-center overflow-hidden rounded-lg bg-white shadow">
-            <Image
+            {movie?.imageUrl != null ? <Image
               source={{ uri: movie?.imageUrl }}
               className="w-full h-full"
-            />
+            /> : null}
           </View>
           {/* Movie Title */}
           <Text
