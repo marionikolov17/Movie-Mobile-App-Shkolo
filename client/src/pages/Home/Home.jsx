@@ -5,18 +5,18 @@ import { useNavigation } from "@react-navigation/native";
 import useAuthenticate from "../../entities/users/hooks/useAuthenticate";
 
 export default function Home() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    useAuthenticate(navigation)
+  useAuthenticate(navigation);
 
-    return (
-        <>
-            <SafeAreaView className="w-full min-h-full bg-mainBackground">
-                <AppHeader />
-                <ScrollView className="mb-20">
-                    <MovieList />
-                </ScrollView>
-            </SafeAreaView>
-        </>
-    )
+  return (
+    <>
+      <SafeAreaView className="w-full min-h-full bg-mainBackground">
+        <AppHeader />
+        <ScrollView className="mb-20">
+          <MovieList />
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  );
 }

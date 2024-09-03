@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "http://10.0.2.2:8000";
 
 export const get = async (url, options = null) => {
   return fetch(BASE_URL + url, {
