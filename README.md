@@ -29,15 +29,15 @@ php artisan serve
 cd client
 npm install
 ```
-3. After completing the installation, You must have configure this things:
+3. After completing the installation, You must configure these things:
     1. [Install and configure Android Studio and Android Emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
     2. [Install EAS](https://docs.expo.dev/build/setup/)
     3. Make an anroid build with the following command and make sure that the emulator is started
     ```
     eas build -p android --profile development
     ```
-4. After successful build type in the terminal:
+4. After successful build, type in the terminal:
 ```
 npm start
 ```
-5. Then when the Metro Bundler has started type 'a' in the terminal and it will open the app on the emulator.
+5. Then when the Metro Bundler has started, type 'a' in the terminal and it will open the app on the emulator.
