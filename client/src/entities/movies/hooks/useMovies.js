@@ -15,7 +15,7 @@ export const useGetAllMovies = () => {
 
                 setMovies(movies);
             } catch (error) {
-                console.log(error)
+                console.log("err", error)
                 setError(error)
             } finally {
                 setIsLoading(false);

@@ -34,8 +34,10 @@ export default function Login() {
             setIsLoading(true);
             if (error) {
               console.log("err", error);
+              setIsLoading(false);
             } else if (result.isCancelled) {
               console.log("cancelled");
+              setIsLoading(false);
             } else {
               try {
                 const data = await AccessToken.getCurrentAccessToken();
